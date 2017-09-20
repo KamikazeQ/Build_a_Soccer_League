@@ -2,7 +2,7 @@ import csv
 
 # Open and read file.
 def read():
-    with open('soccer_players.csv', newline='') as cvsfile:
+    with open('path\to\soccer_players.csv', newline='') as cvsfile:
         player_reader = csv.DictReader(csvfile, delimeter=',')
         players = list(player_reader)
 
@@ -12,13 +12,13 @@ if __name__ == "__main__":
     Dragons = []
     Sharks = []
     Raptors = []
-    def experienced_player(players):
+    def each_player(players):
         experienced = []
         new = []
-        for each_experienced in players:
-            if experienced_player['Soccer Experience'] == 'YES':
-                experienced.append(each_experienced)
+        for each_player in players:
+            if each_player['Soccer Experience'] == 'YES':
+                experienced.append(each_player)
             else:
-                new.append(each_experienced)
+                new.append(each_player)
         print(experienced)
         print(new)
