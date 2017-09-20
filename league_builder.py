@@ -8,7 +8,7 @@ def read():
         return players
 
 # Create team lists
-def each_player(players):
+def find_experienced(players):
     experienced = []
     new = []
     for the_player in players:
@@ -19,6 +19,8 @@ def each_player(players):
     print(experienced)
     print(new)
 
+read()
+find_experienced(players)
 # Put all logic and function calls inside block
 
 
