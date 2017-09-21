@@ -20,7 +20,7 @@ def find_experienced(player_list_from_csv):
             new.append(the_player)
     return experienced, new
 
-experienced_and_new_players = experienced, new
+experienced_and_new_players = find_experienced(player_list_from_csv)
 
 # Distributes experienced and new players
 def players_per_team(experienced_and_new_players):
