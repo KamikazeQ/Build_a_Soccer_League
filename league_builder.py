@@ -26,7 +26,7 @@ experienced_and_new_players = find_experienced(player_list_from_csv)
 def players_per_team(experienced_and_new_players):
         Dragons = []
         Sharks = []
-        Monsters = []
+        Raptors = []
         
         for player in experienced:
             if len(experienced) in Dragons < 4:
@@ -34,18 +34,16 @@ def players_per_team(experienced_and_new_players):
             elif len(experienced) in Sharks < 4:
                 Sharks.append(experienced)
             else:
-                Monsters.append(experienced)
+                Raptors.append(experienced)
         for player in new:
             if len(new) in Dragons < 4:
                 Dragons.append(new)
             if len(new) in Sharks < 4:
                 Sharks.append(new)
             else:
-                Monsters.append(new)
-        return Dragons, Sharks, Monsters
-        print(Dragons)
-        print(Sharks)
-        print(Monsters)
+                Raptors.append(new)
+        return Dragons, Sharks, Raptors
+        print(Dragons, Sharks, Raptors)
         
 if __name__ == '__main__':        
     read()
