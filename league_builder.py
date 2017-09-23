@@ -13,43 +13,47 @@ player_list_from_csv = read()
 def find_experienced(player_list_from_csv):
     experienced = []
     new = []
-    for the_player in player_list_from_csv:
-        if the_player['Soccer Experience'] == 'YES':
-            experienced.append(the_player)
-        else:
-            new.append(the_player)
-    return experienced, new
+    for the_experienced_player in player_list_from_csv:
+        if the_experienced_player['Soccer Experience'] == 'YES':
+            experienced.append(the_experienced_player)
+    return experienced
 
-experienced_and_new_players = find_experienced(player_list_from_csv)
+def find_new(player_list_from_csv):
+    new = []
+    for the_new_player in player_list_from_csv:
+        if the_new_player['Soccer Experience'] == 'NO':
+            new.append(the_new_player)
+    return new
+
+experienced_players = find_experienced(player_list_from_csv)
+new_players = find_new(player_list_from_csv)
 
 # Distributes experienced and new players
-def players_per_team(experienced_and_new_players):
-        Dragons = []
-        Sharks = []
-        Raptors = []
+def players_per_team(experienced_players, new_players):
+    Dragons = []
+    Sharks = []
+    Raptors = []
+    
+    for player in experienced_players:
+        if len(experienced_players) in Dragons < 4:
+            Dragons.append(experienced_players)
+        elif len(experienced_players) in Sharks < 4:
+            Sharks.append(experienced_players)
+        else:
+            Raptors.append(experienced_players)
+    for player in new_players:
+        if len(new_players) in Dragons < 4:
+            Dragons.append(new_players)
+        if len(new_players) in Sharks < 4:
+            Sharks.append(new_players)
+        else:
+            Raptors.append(new_players)
+    return Dragons, Sharks, Raptors
+    print(Dragons, Sharks, Raptors)
         
-        for player in experienced:
-            if len(experienced) in Dragons < 4:
-                Dragons.append(experienced)
-            elif len(experienced) in Sharks < 4:
-                Sharks.append(experienced)
-            else:
-                Raptors.append(experienced)
-        for player in new:
-            if len(new) in Dragons < 4:
-                Dragons.append(new)
-            if len(new) in Sharks < 4:
-                Sharks.append(new)
-            else:
-                Raptors.append(new)
-        return Dragons, Sharks, Raptors
-        print(Dragons, Sharks, Raptors)
-        
+# Put all logic and function calls inside block
 if __name__ == '__main__':        
     read()
     find_experienced(player_list_from_csv)
-    players_per_team(experienced_and_new_players)
-
-# Put all logic and function calls inside block    
-
+    players_per_team(experienced_players, new_players)
         
