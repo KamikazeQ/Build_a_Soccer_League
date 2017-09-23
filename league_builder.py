@@ -12,7 +12,6 @@ player_list_from_csv = read()
 # Find experienced players vs. not experienced players
 def find_experienced(player_list_from_csv):
     experienced = []
-    new = []
     for the_experienced_player in player_list_from_csv:
         if the_experienced_player['Soccer Experience'] == 'YES':
             experienced.append(the_experienced_player)
